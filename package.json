@@ -1,0 +1,46 @@
+{
+  "name": "nuku-desktop",
+  "description": "Nuku Desktop App",
+  "version": "1.0.0",
+  "main": ".webpack/main",
+  "scripts": {
+    "electron": "electron src/main.js",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make -- --platform=win32",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "backbone": "^1.6.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "electron-squirrel-startup": "^1.0.1",
+    "handlebars": "^4.7.8",
+    "jquery": "^3.7.1",
+    "underscore": "^1.13.7"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-deb": "^7.5.0",
+    "@electron-forge/maker-snap": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
+    "@electron-forge/maker-zip": "^7.5.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
+    "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron-forge/plugin-webpack": "^7.5.0",
+    "@electron-forge/publisher-github": "^7.5.0",
+    "@electron/fuses": "^1.8.0",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "backbone": "^1.6.0",
+    "css-loader": "^6.11.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "electron": "33.2.0",
+    "jquery": "^3.7.1",
+    "node-loader": "^2.0.0",
+    "style-loader": "^3.3.4",
+    "underscore": "^1.13.7"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
