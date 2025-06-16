@@ -1,5 +1,5 @@
-const { FusesPlugin } = require('@electron-forge/plugin-fuses');
-const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const { FusesPlugin } = require("@electron-forge/plugin-fuses");
+const { FuseV1Options, FuseVersion } = require("@electron/fuses");
 
 module.exports = {
   packagerConfig: {
@@ -8,60 +8,63 @@ module.exports = {
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
-    },
-    {
-      name: '@electron-forge/maker-deb',
+      name: "@electron-forge/maker-squirrel",
       config: {
-        options: {
-          maintainer: 'Christian Augustyn',
-          homepage: 'https://www.christianaugustyn.me'
-        }
+        certificateFile: "./cert.pfx",
+        certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
     },
     {
-      name: '@electron-forge/maker-snap',
+      name: "@electron-forge/maker-zip",
+      platforms: ["darwin"],
+    },
+    {
+      name: "@electron-forge/maker-deb",
       config: {
-        features: {
-          audio: true,
-          mpris: 'com.example.mpris',
-          webgl: true
+        options: {
+          maintainer: "Christian Augustyn",
+          homepage: "https://www.christianaugustyn.me",
         },
-        summary: 'Pretty Awesome'
-      }
-    }
+      },
+    },
+    // {
+    //   name: '@electron-forge/maker-snap',
+    //   config: {
+    //     features: {
+    //       audio: true,
+    //       mpris: 'com.example.mpris',
+    //       webgl: true
+    //     },
+    //     summary: 'Pretty Awesome'
+    //   }
+    // }
   ],
   plugins: [
     {
-      name: '@electron-forge/plugin-auto-unpack-natives',
+      name: "@electron-forge/plugin-auto-unpack-natives",
       config: {},
     },
     {
-      name: '@electron-forge/plugin-webpack',
+      name: "@electron-forge/plugin-webpack",
       config: {
-        mainConfig: './webpack.main.config.js',
+        mainConfig: "./webpack.main.config.js",
         renderer: {
-          config: './webpack.renderer.config.js',
+          config: "./webpack.renderer.config.js",
           entryPoints: [
             {
-              html: './src/index.html',
-              js: './src/renderer.js',
-              name: 'main_window',
+              html: "./src/index.html",
+              js: "./src/renderer.js",
+              name: "main_window",
               preload: {
-                js: './src/preload.js',
+                js: "./src/preload.js",
               },
             },
             {
-              html: './src/splash.html',
-              name: 'splash_window',
-              js: './src/renderer.js',
+              html: "./src/splash.html",
+              name: "splash_window",
+              js: "./src/renderer.js",
               preload: {
-                js: './src/preload.js',
+                js: "./src/preload.js",
               },
             },
           ],

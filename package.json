@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "backbone": "^1.6.0",
+    "custom-electron-titlebar": "^4.2.8",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
     "electron-squirrel-startup": "^1.0.1",
